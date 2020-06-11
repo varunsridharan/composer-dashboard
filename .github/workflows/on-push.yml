@@ -49,3 +49,4 @@ jobs:
           fi
         env:
           GLOBAL_GH_TOKEN: ${{ secrets.GLOBAL_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
