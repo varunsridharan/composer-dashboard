@@ -1,11 +1,12 @@
 <?php
+$key   = ( isset( $argv[1] ) ) ? $argv[1] : false; //
 $start = microtime( true );
 
 date_default_timezone_set( 'Asia/Kolkata' );
 
 define( 'APP_PATH', __DIR__ . '/' );
 
-define( 'GITHUB_ACCESS_TOKEN', '8d87f9df68f0742e09d26c13e441580a9c114229' );
+define( 'GITHUB_ACCESS_TOKEN', $key );
 
 require_once APP_PATH . 'vendor/autoload.php';
 require_once APP_PATH . '/app/class-handler.php';
