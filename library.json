@@ -1,6 +1,9 @@
 {
   "wponion/wponion"                             : "WPOnion",
   "varunsridharan/vsp-framework"                : "VSP Framework",
+  "varunsridharan/php-autoloader"               : "PHP Autoloader",
+  "varunsridharan/wp-dependencies"              : "wp-dependencies",
+  "varunsridharan/wp-conditional-logic"         : "wp-conditional-logic",
   "varunsridharan/wpallimport_rapidaddon"       : "WPAllImport Addon",
   "varunsridharan/sweetalert2-php"              : "SweetAlert2 PHP",
   "varunsridharan/wp-ajaxer"                    : "WP Ajaxer",
