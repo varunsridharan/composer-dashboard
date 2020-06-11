@@ -5,9 +5,9 @@ class Table_HTML {
 		static $header = array();
 		if ( empty( $header ) ) {
 			$data     = Handler::libs_to_check();
-			$header[] = '<th>Plugin</th>';
+			$header[] = '<th class="p-2" >Plugin</th>';
 			foreach ( $data as $id => $name ) {
-				$header[] = '<th>' . $name . '</th>';
+				$header[] = '<th class="p-2">' . $name . '</th>';
 			}
 		}
 		return implode( ' ', $header );
@@ -22,9 +22,9 @@ class Table_HTML {
 			$libs     = self::libs_status( $info );
 			echo <<<HTML
 <tr>
-	<td> 
+	<td class="p-2"> 
 		${badge} <a class="text-dark" href="{$info['url']}">${info['name']}</a>
-		${latest}  <br/><small class="text-info font-italic ">${released}</small>
+		${latest}  <br/><small class="text-black-50 font-italic ">${released}</small>
 	</td>
 	${libs}
 </tr>
@@ -42,11 +42,11 @@ HTML;
 					if ( $id === $package['name'] ) {
 						if ( version_compare( $package['version'], $git_data[ $id ]['latest']['version'], '<' ) ) {
 							$return[] = <<<HTML
-<td class="table-danger font-weight-bolder">{$package['version']}</td>
+<td class="table-danger p-2">{$package['version']} </td>
 HTML;
 						} else {
 							$return[] = <<<HTML
-<td>{$package['version']} </td>
+<td class="p-2">{$package['version']} </td>
 HTML;
 						}
 					}

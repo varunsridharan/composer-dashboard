@@ -21,6 +21,10 @@ function gh_api() {
 	return $gh_api_instance;
 }
 
-function last_updated( $updated_at ) {
-	return date( 'd-M-yy | H:i A', strtotime( $updated_at ) );
+function last_updated( $updated_at = false ) {
+	$format = 'd/M/yy / h:i:s A';
+	if ( ! empty( $updated_at ) ) {
+		return date( $format, strtotime( $updated_at ) );
+	}
+	return date( $format );
 }
