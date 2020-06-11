@@ -1,5 +1,5 @@
 <?php
-$key   = ( isset( $argv[1] ) ) ? $argv[1] : false; //
+$key   = ( isset( $argv[1] ) ) ? $argv[1] : false;
 $start = microtime( true );
 
 date_default_timezone_set( 'Asia/Kolkata' );
