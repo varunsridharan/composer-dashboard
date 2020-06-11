@@ -17,4 +17,4 @@ jobs:
           php-version: '7.3'
       - run: php crawl.php $GLOBAL_GH_TOKEN
         env:
-          GITHUB_TOKEN: ${{ secrets.GLOBAL_GH_TOKEN }}
+          GLOBAL_GH_TOKEN: ${{ secrets.GLOBAL_GH_TOKEN }}
