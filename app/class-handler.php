@@ -23,7 +23,10 @@ class Handler {
 			$ins  = new Repo();
 			if ( ! empty( $data ) ) {
 				foreach ( $data as $id => $name ) {
-					$libs_to_check[ $id ] = $ins->get( $id, $name, true );
+					$_data = $ins->get( $id, $name, true );
+					if ( isset( $_data['name'] ) ) {
+						$libs_to_check[ $id ] = $_data;
+					}
 				}
 			}
 		}
@@ -32,13 +35,16 @@ class Handler {
 
 	public static function setup_repos_to_check() {
 		static $repos_to_check = false;
-		if ( false === $repos_to_check ) {
+		if ( empty( $repos_to_check ) ) {
 			$data = self::repo_to_check();
 			$ins  = new Repo();
 			if ( ! empty( $data ) ) {
 				foreach ( $data as $group => $info ) {
 					foreach ( $info as $id ) {
-						$repos_to_check[ $id ] = $ins->get( $id );
+						$_data = $ins->get( $id );
+						if ( isset( $_data['name'] ) ) {
+							$repos_to_check[ $id ] = $_data;
+						}
 					}
 				}
 			}

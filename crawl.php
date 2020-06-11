@@ -1,25 +1,30 @@
 <?php
 $start = microtime( true );
 
+date_default_timezone_set( 'Asia/Kolkata' );
+
 define( 'APP_PATH', __DIR__ . '/' );
 
-define( 'GITHUB_ACCESS_TOKEN', $argv[1] );
+define( 'GITHUB_ACCESS_TOKEN', '8d87f9df68f0742e09d26c13e441580a9c114229' );
 
 require_once APP_PATH . 'vendor/autoload.php';
-
 require_once APP_PATH . '/app/class-handler.php';
-
 require_once APP_PATH . '/app/class-repo.php';
-
+require_once APP_PATH . '/app/class-lib-html.php';
+require_once APP_PATH . '/app/class-table-html.php';
 require_once APP_PATH . '/app/setup.php';
 
 Handler::setup_libs_to_check();
+$lib_html = Lib_HTML::run();
 
-Handler::setup_repos_to_check();
+ob_start();
+include APP_PATH . '/template/main.php';
+$html = ob_end_clean();
 
-$time_took = number_format( $start - microtime( true ), 4 );
+$time_took = number_format( microtime( true ) - $start, 4 );
 
 echo <<<HTML
+$html
 <pre> Time Took : ${time_took} </pre>
 HTML;
 

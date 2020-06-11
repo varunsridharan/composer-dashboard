@@ -24,17 +24,17 @@ class Repo {
 		try {
 			$response   = gh_api()->decode( gh_api()->get( '/repos/' . $this->id ) );
 			$tag_info   = gh_api()->decode( gh_api()->get( '/repos/' . $this->id . '/releases/latest' ) );
-			$this->data = array_filter( array(
+			$this->data = array(
 				'name'       => ( isset( $response->name ) ) ? $response->name : null,
-				'private'    => ( isset( $response->private ) ) ? $response->private : null,
+				'private'    => ( isset( $response->private ) ) ? $response->private : false,
 				'updated_at' => ( isset( $response->updated_at ) ) ? $response->updated_at : null,
-				'url'        => ( isset( $response->url ) ) ? $response->url : null,
-				'latest'     => array_filter( array(
+				'url'        => ( isset( $response->html_url ) ) ? $response->html_url : null,
+				'latest'     => array(
 					'version'      => ( isset( $tag_info->tag_name ) ) ? $tag_info->tag_name : null,
 					'zip'          => ( isset( $tag_info->zipball_url ) ) ? $tag_info->zipball_url : null,
-					'published_at' => ( isset( $tag_info->published_at ) ) ? $tag_info->published_at : null,
-				) ),
-			) );
+					'published_at' => ( isset( $tag_info->published_at ) ) ? $tag_info->published_at : false,
+				),
+			);
 			if ( ! empty( $this->name ) ) {
 				$this->data['name'] = $this->name;
 			}
