@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>PcP Admin</title>
+	<title>Personal Composer Project Stats</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="assets/css/buttons.bootstrap4.min.css">
 </head>
-<body>
+<body style="background: #f1f0f0;">
 <div class="container-fulid p-3">
-	<h2 class=" text-center d-block">PcP Admin</h2>
+	<h2 class=" text-center d-block">Personal Composer Project Stats</h2>
 
-	<table id="sftTable" class="table-responsive table table-hover table-bordered">
+	<table id="sftTable" class="table-responsive table table-table-responsive table table-light table-striped table-borderless">
 		<thead class="thead-dark">
 		<tr><?php echo Table_HTML::headers(); ?></tr>
 		</thead>
 		<tbody>
-		<?php echo Table_HTML::body(); ?>
+		<?php Table_HTML::body(); ?>
 		</tbody>
 		<tfoot>
 		<tr><?php echo Table_HTML::headers(); ?></tr>
