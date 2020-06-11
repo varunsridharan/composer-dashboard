@@ -2,12 +2,14 @@
   "Free" : [
 	"varunsridharan/wc-product-subtitle",
 	"varunsridharan/sku-shortlink-for-woocommerce",
+	"varunsridharan/woocommerce-quick-buy",
 	"varunsridharan/single-product-checkout-for-woocommerce"
   ],
   "Paid" : [
 	"varunsridharan/wc-role-based-tax",
 	"varunsridharan/zip-pin-or-postal-code-validator-for-wc",
 	"varunsridharan/wc-role-based-payment-shipping-methods",
-	"varunsridharan/woocommerce-bulk-price-updater"
+	"varunsridharan/woocommerce-bulk-price-updater",
+	"varunsridharan/role-based-add-to-cart-or-price-hide"
   ]
 }
