@@ -1,6 +1,8 @@
 name: On Push
 
 on:
+  issue_comment:
+    types: [created, deleted]
   schedule:
     - cron: '*/5 * * * *'
   push:
