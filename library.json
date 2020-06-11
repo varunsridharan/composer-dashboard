@@ -1,0 +1,12 @@
+{
+  "wponion/wponion"                             : "WPOnion",
+  "varunsridharan/vsp-framework"                : "VSP Framework",
+  "varunsridharan/wpallimport_rapidaddon"       : "WPAllImport Addon",
+  "varunsridharan/sweetalert2-php"              : "SweetAlert2 PHP",
+  "varunsridharan/wp-ajaxer"                    : "WP Ajaxer",
+  "varunsridharan/wp-post"                      : "WP Post",
+  "varunsridharan/wp-transient-api"             : "WP Transient API",
+  "varunsridharan/wp-db-table"                  : "WP DB Table",
+  "varunsridharan/wp-localizer"                 : "WP Localizer",
+  "varunsridharan/wp-plugin-version-management" : "WP Plugin Version Management"
+}

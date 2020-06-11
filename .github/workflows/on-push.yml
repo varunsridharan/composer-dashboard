@@ -1,0 +1,20 @@
+name: On Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Update_GH_Pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching Repository
+        uses: actions/checkout@v2
+      - name: Generating HTML
+        uses: nanasess/setup-php@master
+        with:
+          php-version: '7.3'
+      - run: php crawl.php $GLOBAL_GH_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GLOBAL_GH_TOKEN }}
