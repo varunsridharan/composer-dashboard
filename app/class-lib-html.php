@@ -12,7 +12,7 @@ class Lib_HTML {
 	  <div class="card-body">
 		<h5 class="card-title"><a href="{$data['url']}" class="text-dark">{$data['name']}</a></h5>
 		<small class="card-subtitle mb-2 text-muted d-block font-italic">📝 ${last_updated}</small>
-		<a href="{$data['latest']['zip']}" class="btn btn-outline-success btn-block btn-sm mt-3 text-left rounded-0">Download {$data['latest']['version']}</a>
+		<a href="{$data['latest']['zip']}" class="btn btn-outline-success btn-sm mt-3 text-left">Download {$data['latest']['version']}</a>
 	  </div>
 	</div>
 </div>
