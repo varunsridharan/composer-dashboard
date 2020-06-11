@@ -19,12 +19,11 @@ $lib_html = Lib_HTML::run();
 
 ob_start();
 include APP_PATH . '/template/main.php';
-$html = ob_end_clean();
+$html = ob_get_clean();
 
 $time_took = number_format( microtime( true ) - $start, 4 );
 
 echo <<<HTML
-$html
 <pre> Time Took : ${time_took} </pre>
 HTML;
 
