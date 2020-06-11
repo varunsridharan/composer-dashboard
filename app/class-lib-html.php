@@ -7,7 +7,7 @@ class Lib_HTML {
 		foreach ( $libs as $id => $data ) {
 			$last_updated = last_updated( $data['updated_at'] );
 			$html[]       = <<<HTML
-<div class="col-3 mb-3">
+<div class="col-12 col-md-6 col-xl-2 mb-3">
 	<div class="card">
 	  <div class="card-body">
 		<h5 class="card-title"><a href="{$data['url']}" class="text-dark">{$data['name']}</a></h5>

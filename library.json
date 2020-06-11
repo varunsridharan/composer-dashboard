@@ -1,15 +1,15 @@
 {
   "wponion/wponion"                             : "WPOnion",
-  "varunsridharan/vsp-framework"                : "VSP Framework",
-  "varunsridharan/php-autoloader"               : "PHP Autoloader",
-  "varunsridharan/wp-dependencies"              : "wp-dependencies",
-  "varunsridharan/wp-conditional-logic"         : "wp-conditional-logic",
-  "varunsridharan/wpallimport_rapidaddon"       : "WPAllImport Addon",
-  "varunsridharan/sweetalert2-php"              : "SweetAlert2 PHP",
+  "varunsridharan/vsp-framework"                : "VSP",
+  "varunsridharan/php-autoloader"               : "Autoloader",
   "varunsridharan/wp-ajaxer"                    : "WP Ajaxer",
   "varunsridharan/wp-post"                      : "WP Post",
-  "varunsridharan/wp-transient-api"             : "WP Transient API",
-  "varunsridharan/wp-db-table"                  : "WP DB Table",
+  "varunsridharan/wp-db-table"                  : "WPDB Table",
   "varunsridharan/wp-localizer"                 : "WP Localizer",
-  "varunsridharan/wp-plugin-version-management" : "WP Plugin Version Management"
+  "varunsridharan/wp-dependencies"              : "WP Deps",
+  "varunsridharan/sweetalert2-php"              : "Swal",
+  "varunsridharan/wp-transient-api"             : "WP TAPI",
+  "varunsridharan/wp-conditional-logic"         : "WP CL",
+  "varunsridharan/wp-plugin-version-management" : "WP PVM",
+  "varunsridharan/wpallimport_rapidaddon"       : "WP All Import"
 }
