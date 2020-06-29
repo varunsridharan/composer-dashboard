@@ -54,3 +54,4 @@ jobs:
         env:
           GLOBAL_GH_TOKEN: ${{ secrets.GH_REPO }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
