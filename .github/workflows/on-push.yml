@@ -7,7 +7,7 @@ on:
     - cron: '*/5 * * * *'
   push:
     branches:
-      - master
+      - main
 
 jobs:
   Update_GH_Pages:
