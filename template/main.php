@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" href="assets/css/buttons.bootstrap4.min.css">
-	<meta data-react-helmet="true" name="monetization" content="$ilp.uphold.com/23yja9PWqf3b"/>
+	<meta data-react-helmet="true" name="monetization" content="$ilp.uphold.com/QwUZ2X6y4Qg7"/>
 </head>
 <body style="background: #f1f0f0;">
 <div class="container-fulid p-3">
