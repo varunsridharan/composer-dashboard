@@ -13,7 +13,7 @@ class Handler {
 	}
 
 	public static function repo_to_check() {
-		$return = array( 'free' => array(), 'paid' => array() );
+		$return = array( 'Free' => array(), 'Paid' => array() );
 
 		$paid = file_get_contents( 'https://cdn.svarun.dev/json/envato-items.json' );
 		$free = file_get_contents( 'https://cdn.svarun.dev/json/wordpress-org-items.json' );
@@ -21,14 +21,15 @@ class Handler {
 		$free = json_decode( $free, true );
 
 		if ( isset( $paid['plugins'] ) ) {
-			$return['paid'] = array_keys( $paid['plugins'] );
+			$return['Paid'] = array_keys( $paid['plugins'] );
 		}
 
 		if ( is_array( $free ) && ! empty( $free ) ) {
 			foreach ( $free as $item ) {
-				$return['free'][] = $item['slug'];
+				$return['Free'][] = $item['slug'];
 			}
 		}
+		print_r( $return );
 		return $return;
 		#return self::get_json( 'repos.json' );
 	}
