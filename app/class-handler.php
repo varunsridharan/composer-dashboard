@@ -13,11 +13,31 @@ class Handler {
 	}
 
 	public static function repo_to_check() {
-		return self::get_json( 'repos.json' );
+		$return = array( 'free' => array(), 'paid' => array() );
+
+		$paid = file_get_contents( 'https://cdn.svarun.dev/json/envato-items.json' );
+		$free = file_get_contents( 'https://cdn.svarun.dev/json/wordpress-org-items.json' );
+		$paid = json_decode( $paid, true );
+		$free = json_decode( $free, true );
+
+		if ( isset( $paid['plugins'] ) ) {
+			$return['paid'] = array_keys( $paid['plugins'] );
+		}
+
+		if ( is_array( $free ) && ! empty( $free ) ) {
+			foreach ( $free as $item ) {
+				$return['free'][] = $item['slug'];
+			}
+		}
+		return $return;
+		#return self::get_json( 'repos.json' );
 	}
 
 	public static function setup_libs_to_check() {
 		static $libs_to_check = false;
+		/*if ( file_exists( APP_PATH . 'cache/libs_to_check.json' ) ) {
+			$libs_to_check = json_decode( file_get_contents( APP_PATH . 'cache/libs_to_check.json' ), true );
+		}*/
 		if ( false === $libs_to_check ) {
 			$data = self::libs_to_check();
 			$ins  = new Repo();
@@ -29,12 +49,16 @@ class Handler {
 					}
 				}
 			}
+			#file_put_contents( APP_PATH . 'cache/libs_to_check.json', json_encode( $libs_to_check ) );
 		}
 		return $libs_to_check;
 	}
 
 	public static function setup_repos_to_check() {
 		static $repos_to_check = false;
+		/*if ( file_exists( APP_PATH . 'cache/repos_tocheck.json' ) ) {
+			$repos_to_check = json_decode( file_get_contents( APP_PATH . 'cache/repos_tocheck.json' ), true );
+		}*/
 		if ( empty( $repos_to_check ) ) {
 			$data = self::repo_to_check();
 			$ins  = new Repo();
@@ -47,6 +71,7 @@ class Handler {
 						}
 					}
 				}
+				#file_put_contents( APP_PATH . 'cache/repos_tocheck.json', json_encode( $repos_to_check ) );
 			}
 		}
 		return $repos_to_check;
