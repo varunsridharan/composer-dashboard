@@ -21,15 +21,16 @@ class Handler {
 		$free = json_decode( $free, true );
 
 		if ( isset( $paid['plugins'] ) ) {
-			$return['Paid'] = array_keys( $paid['plugins'] );
+			foreach ( array_keys( $paid['plugins'] ) as $id ) {
+				$return['Paid'][] = 'varunsridharan/' . $id;
+			}
 		}
 
 		if ( is_array( $free ) && ! empty( $free ) ) {
 			foreach ( $free as $item ) {
-				$return['Free'][] = $item['slug'];
+				$return['Free'][] = 'varunsridharan/' . $item['slug'];
 			}
 		}
-		print_r( $return );
 		return $return;
 		#return self::get_json( 'repos.json' );
 	}
