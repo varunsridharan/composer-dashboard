@@ -41,42 +41,6 @@
 </div>
 <script src="assets/js/jquery-3.4.1.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/dataTables.bootstrap4.min.js"></script>
-<script>
-	$( document ).ready( function() {
-		$( '#sftTable tfoot th,#sftTable thead tr.search th' ).each( function() {
-			var title = $( this ).text();
-			if( title !== 'Action' ) {
-				$( this )
-					.html( '<input type="text" class="form-control form-control-sm" placeholder="' + title + '" style="max-width:95%;" />' );
-			} else {
-				$( this ).html( '' );
-			}
-		} );
-		// DataTable
-		var table = $( '#sftTable' ).DataTable( {
-			order: [ [ 1, "asc" ] ],
-			responsive: true,
-			paging: false,
-			scrollY: 500,
-		} );
-
-		table.columns().every( function() {
-			var that = this;
-			$( 'input', this.footer() ).on( 'keyup change', function() {
-				if( that.search() !== this.value ) {
-					that.search( this.value ).draw();
-				}
-			} );
-
-			$( 'input', this.header() ).on( 'keyup change', function() {
-				if( that.search() !== this.value ) {
-					that.search( this.value ).draw();
-				}
-			} );
-		} );
-	} );
-</script>
+	
 </body>
 </html>
