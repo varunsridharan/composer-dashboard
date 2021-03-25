@@ -22,7 +22,7 @@ function gh_api() {
 }
 
 function last_updated( $updated_at = false ) {
-	$format = 'd/M/YYYY - h:i:s A';
+	$format = 'd/M/Y - h:i:s A';
 	if ( ! empty( $updated_at ) ) {
 		return date( $format, strtotime( $updated_at ) );
 	}
