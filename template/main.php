@@ -14,8 +14,7 @@
 		<div class="col-12"><h2 class="text-center d-block">Personal Composer Project Stats</h2></div>
 	</div>
 
-	<table id="sftTable"
-		   class="table-responsive table table-table-responsive table-light table table-hover  table-sm table-borderless">
+	<table id="sftTable" class="table table table-hover  table-light">
 		<thead class="thead-dark">
 		<tr><?php echo Table_HTML::headers(); ?></tr>
 		</thead>
