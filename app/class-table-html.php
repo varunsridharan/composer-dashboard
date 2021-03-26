@@ -20,15 +20,17 @@ class Table_HTML {
 			$badge    = ( true === $info['private'] ) ? '<small> <span class="badge badge-secondary">PRO</span></small>' : '';
 			$released = last_updated( $info['latest']['published_at'] );
 			$libs     = self::libs_status( $info );
-			echo <<<HTML
-<tr>
-	<td class="p-2"> 
-		${badge} <a class="text-dark" href="{$info['url']}">${info['name']}</a>
-		${latest}  <br/><small class="text-black-50 font-italic ">${released}</small>
-	</td>
-	${libs}
-</tr>
-HTML;
+			if(!empty($libs)){
+				echo <<<HTML
+	<tr>
+		<td class="p-2"> 
+			${badge} <a class="text-dark" href="{$info['url']}">${info['name']}</a>
+			${latest}  <br/><small class="text-black-50 font-italic ">${released}</small>
+		</td>
+		${libs}
+	</tr>
+	HTML;
+			}
 		}
 	}
 
